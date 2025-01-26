@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>CONTROLE DE USO DE VEÍCULOS</title>
+</head>
+<body>
+    <!--MENU SUPERIOR-->
+    <div id="menusup">
+        <a href="https://erione.com.br/"><img src="./imagens/erione_logo.jpg" id="logo" alt="ERRO!"></a>
+                
+    </div>
+
+    <!--FORMULÁRIO-->
+    <div id="formulario">
+        <h1 id="titulo-formulario">Para retirar o veículo, por favor preencha todos os campos abaixo!</h1>
+        <form action="https://api.sheetmonkey.io/form/n6mUyJisnMTpVSZ6yPYp7Y" method="post">
+            <input  type="text" placeholder="Condutor" name="Name" required><br>
+            <input type="text" placeholder="KM saída" name="KM saída" required><br>
+            <input type="number" placeholder="KM chegada" name="KM chegada" required><br>
+            <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+            <select name="veículo" required="required">
+                <option value="">ESCOLHA UM VEÍCULO</option>
+                <option value="Fiorino RMT-5F17">Fiorino RMT-5F17</option>
+                <option value="Fiorino - SVH-0E46">Fiorino - SVH-0E46 </option>
+                <option value="Fiorino FQD=2D4">Fiorino FQD=2D4</option>
+                <option value="Fiorino FMK-3F71">Fiorino FMK-3F71</option>
+                <option value="KWID GFP-4I93">KWID GFP-4I93</option>
+                <option value="KWID GEQ-2D76">KWID GEQ-2D76S</option>
+                <option value="CIVIC KPR-4516 ">CIVIC KPR-4516</option>
+                <option value="ARGO  RML-1E39">ARGO RML-1E39</option>
+                <option value="SANTA FÉ EKX-4G29">SANTA FÉ EKX-4G29</option>
+                <option value="SAVEIRO FOS-2C50">VW SAVEIRO FOS-2C50</option>
+                <option value="hoggar KXM-5029">hoggar KXM-5029</option>
+                <option value="MONTANA DPX-6B24 ">MONTANA DPX-6B24</option>
+                <option value="Constelation EJV-7J05">Constelation EJV-7J05</option>
+                <option value="EXPRESS RJH-2D52">EXPRESS RJH-2D52 </option>
+                <option value="UNO MILLE HLH-0864">UNO MILLE HLH-0864</option>
+            </select><br>
+            <select name="projeto" required="required">
+                <option value="">PROJETO</option>
+                <option value="CAMANDUCAIA">CAMADUCAIA</option>
+                <option value="CAMADUCAIA - ESCOLAS">CAMADUCAIA - ESCOLAS</option>
+                <option value="AEROPORTO">AEROPORTO</option>
+                <option value="ALARME">ALARME</option>
+                <option value="CÂMARA MUNICIPAL">CÂMARA MUNICIPAL</option>
+                <option value="CAMPOS DO JORDÃO">CAMPOS DO JORDÃO</option>
+                <option value="CAMPOS LUZ">CAMPOS LUZ</option>
+                <option value="TREMEMBÉ">TREMEMBÉ</option>
+                <option value="CAÇAPAVA">CAÇAPAVA</option>
+                <option value="CCR">CCR</option>
+                <option value="PINDAMONHAGABA">PINDAMONHAGABA</option>
+                <option value="USO ADMINISTRATIVO">USO ADMINISTRATIVO</option>
+                <option value="CPAC">CPAC</option>
+                <option value="APARECIDA">APARECIDA</option>
+                <option value="Sta. BRANCA">Sta. BRANCA</option>
+            </select><br>
+            <button type="submit">Enviar</button>
+
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

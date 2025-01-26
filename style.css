@@ -1,0 +1,79 @@
+*{
+    margin: 0px;
+    font-family: "inter";
+    
+}
+#logo{
+    margin-left: 50px;
+    margin-top: 25px;
+    border-radius: 100px;
+    box-shadow: 0px 15px 20px #0a191f9e;
+    
+}
+
+#titulo-sup{
+    margin-left: 125px;
+    margin-top: 50px;
+    color: antiquewhite;
+}
+
+
+#menusup{
+    background-image: url(imagens/frotaII.jpg);
+    background-position: center;
+    background-size: cover;
+    block-size: 250px;
+    
+}
+
+#formulario{
+    text-align: center;
+    background-color: #022939;
+
+}
+
+#titulo-formulario{
+    font-size: 25px;
+    margin: 25px;
+    color:antiquewhite;
+    padding-top: 20px;
+}
+
+input {
+    width: 300px ;
+    Height: 40px;
+    background-color: #EAECE5;
+    margin: 15px;
+    border: 0px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+select {
+    width: 315px ;
+    Height: 40px;
+    background-color: #EAECE5;
+    margin: 15px;
+    border: 0px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+button{
+    background-color: #247BA0;
+    height: 40px;
+    width: 250px;
+    color: #EAECE5;
+    border: 0px;
+    border-radius: 5px;
+    margin: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+
+}
+
+button:hover{
+    transform: translateY(-7px);
+    transition-duration: 0.5s;
+    box-shadow: 0px 15px 20px #0f252e9e;
+}
