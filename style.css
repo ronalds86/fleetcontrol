@@ -59,6 +59,25 @@ select {
     padding-left: 10px;
 }
 
+#textRequisião{
+    font-size: 25px;
+    margin: 25px;
+    color:antiquewhite;
+    padding-top: 20px;
+}
+
+#sim {
+    color: antiquewhite;
+}
+
+#nao {
+    color: antiquewhite;
+}
+
+#radio {
+    size: 100px;
+}
+
 button{
     background-color: #247BA0;
     height: 40px;

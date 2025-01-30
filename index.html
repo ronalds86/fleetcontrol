@@ -16,6 +16,26 @@
                 
     </div>
 
+    <script type="text/javascript">
+        function toggleField() {
+            var select = document.getElementsByName('Abastecimento')[0];
+            var input = document.getElementsByName('requisição')[0];
+
+            if (select.value === 'SIM') {
+                input.disabled = false;
+            } else {
+                input.disabled = true;
+                input.value = ''; 
+            }
+        }
+
+        window.onload = function() {
+            toggleField();  
+            document.getElementsByName('Abastecimento')[0].onchange = toggleField;
+        }
+
+    </script>
+
     <!--FORMULÁRIO-->
     <div id="formulario">
         <h1 id="titulo-formulario">Para retirar o veículo, por favor preencha todos os campos abaixo!</h1>
@@ -60,8 +80,14 @@
                 <option value="APARECIDA">APARECIDA</option>
                 <option value="Sta. BRANCA">Sta. BRANCA</option>
             </select><br>
-            <button type="submit">Enviar</button>
-
+            <select name="Abastecimento" required="required">
+                <option value="">PRECISA ABASTECER?</option>
+                <option value="SIM">SIM</option>
+                <option value="NÃO">NÃO</option>
+            </select><br>
+                <input type="text" placeholder="Nº da requisição" name="requisição"><br>
+            <button type="submit" id="send">Enviar</button>
+        <form></form>
 
     </div>
 
