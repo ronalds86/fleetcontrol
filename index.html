@@ -36,6 +36,8 @@
 
     </script>
 
+</script>
+
     <!--FORMULÁRIO-->
     <div id="formulario">
         <h1 id="titulo-formulario">Para retirar o veículo, por favor preencha todos os campos abaixo!</h1>
@@ -61,6 +63,7 @@
                 <option value="Constelation EJV-7J05">Constelation EJV-7J05</option>
                 <option value="EXPRESS RJH-2D52">EXPRESS RJH-2D52 </option>
                 <option value="UNO MILLE HLH-0864">UNO MILLE HLH-0864</option>
+                <option value="FIAT PALIO DIX-3046">FIAT PALIO DIX-3046</option>
             </select><br>
             <select name="projeto" required="required">
                 <option value="">PROJETO</option>
@@ -79,18 +82,48 @@
                 <option value="CPAC">CPAC</option>
                 <option value="APARECIDA">APARECIDA</option>
                 <option value="Sta. BRANCA">Sta. BRANCA</option>
+                <option value="NÃO LISTADO">NÃO LISTADO</option>
             </select><br>
+            <!--PROJ NÃO LISTADO 18/03/25-->
+            <div id="outroProjetoContainer" style="display: none; margin-top: 10px;">
+                <input type="text" id="outroProjeto" name="outroProjeto" placeholder="Informe o nome do projeto">
+            </div>
+            
+            <!--JS-->
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    var projetoSelect = document.getElementsByName("projeto")[0];
+                    var outroProjetoContainer = document.getElementById("outroProjetoContainer");
+                    var outroProjetoInput = document.getElementById("outroProjeto");
+            
+                    projetoSelect.addEventListener("change", function () {
+                        if (projetoSelect.value === "NÃO LISTADO") {
+                            outroProjetoContainer.style.display = "block"; // Mostra o campo
+                            outroProjetoInput.required = true; // Torna obrigatóriogit
+                        } else {
+                            outroProjetoContainer.style.display = "none"; // Esconde o campo
+                            outroProjetoInput.required = false; // Remove a obrigatoriedade
+                            outroProjetoInput.value = ""; // Limpa o campo quando não for necessário
+                        }
+                    });
+                });
+            </script>
+
+            <!--ABASTECIMENTO-->
             <select name="Abastecimento" required="required">
                 <option value="">PRECISA ABASTECER?</option>
                 <option value="SIM">SIM</option>
                 <option value="NÃO">NÃO</option>
             </select><br>
+            
                 <input type="text" placeholder="Nº da requisição" name="requisição"><br>
             <button type="submit" id="send">Enviar</button>
+
         <form></form>
 
     </div>
 
     <script src="index.js"></script>
+    
 </body>
 </html>
