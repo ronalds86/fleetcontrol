@@ -10,33 +10,13 @@
     <title>CONTROLE DE USO DE VEÍCULOS</title>
 </head>
 <body>
+
     <!--MENU SUPERIOR-->
     <div id="menusup">
         <a href="https://erione.com.br/"><img src="./imagens/erione_logo.jpg" id="logo" alt="ERRO!"></a>
                 
     </div>
 
-    <script type="text/javascript">
-        function toggleField() {
-            var select = document.getElementsByName('Abastecimento')[0];
-            var input = document.getElementsByName('requisição')[0];
-
-            if (select.value === 'SIM') {
-                input.disabled = false;
-            } else {
-                input.disabled = true;
-                input.value = ''; 
-            }
-        }
-
-        window.onload = function() {
-            toggleField();  
-            document.getElementsByName('Abastecimento')[0].onchange = toggleField;
-        }
-
-    </script>
-
-</script>
 
     <!--FORMULÁRIO-->
     <div id="formulario">
@@ -72,6 +52,8 @@
                 <option value="APARECIDA">APARECIDA</option>
                 <option value="CAÇAPAVA">CAÇAPAVA</option>
                 <option value="CCR">CCR</option>
+                <option value="CCR SERTÃOZINHO">CCR SERTÃOZINHO</option>
+                <option value="CCR SOROCABANA">CCR SOROCABANA</option>   
                 <option value="CAMANDUCAIA">CAMANDUCAIA</option>
                 <option value="CAMANDUCAIA - ESCOLAS">CAMANDUCAIA - ESCOLAS</option>
                 <option value="CÂMARA MUNICIPAL SJC">CÂMARA MUNICIPAL SJC</option>
@@ -93,30 +75,54 @@
                 <option value="NÃO LISTADO">NÃO LISTADO</option>
 
             </select><br>
+
+          
+
             <!--PROJ NÃO LISTADO 18/03/25-->
             <div id="outroProjetoContainer" style="display: none; margin-top: 10px;">
                 <input type="text" id="outroProjeto" name="outroProjeto" placeholder="Informe o nome do projeto">
             </div>
+
+              <!-- Campo de defeito para oficina mecânica -->
+            <div id="defeitoContainer" style="display: none; margin-top: 10px;">
+            <input type="text" id="defeito" name="defeito" placeholder="Informe o problema">
+            </div>
+
             
             <!--JS-->
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
-                    var projetoSelect = document.getElementsByName("projeto")[0];
-                    var outroProjetoContainer = document.getElementById("outroProjetoContainer");
-                    var outroProjetoInput = document.getElementById("outroProjeto");
-            
-                    projetoSelect.addEventListener("change", function () {
-                        if (projetoSelect.value === "NÃO LISTADO") {
-                            outroProjetoContainer.style.display = "block"; // Mostra o campo
-                            outroProjetoInput.required = true; // Torna obrigatóriogit
-                        } else {
-                            outroProjetoContainer.style.display = "none"; // Esconde o campo
-                            outroProjetoInput.required = false; // Remove a obrigatoriedade
-                            outroProjetoInput.value = ""; // Limpa o campo quando não for necessário
-                        }
-                    });
+                var projetoSelect = document.getElementsByName("projeto")[0];
+                var outroProjetoContainer = document.getElementById("outroProjetoContainer");
+                var outroProjetoInput = document.getElementById("outroProjeto");
+                var defeitoContainer = document.getElementById("defeitoContainer");
+                var defeitoInput = document.getElementById("defeito");
+
+                projetoSelect.addEventListener("change", function () {
+                    // MOSTRA campo "outroProjeto"
+                    if (projetoSelect.value === "NÃO LISTADO") {
+                    outroProjetoContainer.style.display = "block";
+                    outroProjetoInput.required = true;
+                    } else {
+                    outroProjetoContainer.style.display = "none";
+                    outroProjetoInput.required = false;
+                    outroProjetoInput.value = "";
+                    }
+
+                    // MOSTRA campo "defeito" se escolher OFICINA MECÂNICA
+                    if (projetoSelect.value === "OFICINA MECÂNICA") {
+                    defeitoContainer.style.display = "block";
+                    defeitoInput.required = true;
+                    } else {
+                    defeitoContainer.style.display = "none";
+                    defeitoInput.required = false;
+                    defeitoInput.value = "";
+                    }
                 });
+            });
             </script>
+
+             
 
             <!--ABASTECIMENTO-->
             <select name="Abastecimento" required="required">
@@ -124,16 +130,55 @@
                 <option value="SIM">SIM</option>
                 <option value="NÃO">NÃO</option>
             </select><br>
+
+            
             
                 <input type="text" placeholder="Nº da requisição" name="requisição"><br>
+
+                <!-- Campo para litros e valor do abastecimento -->
+                <div id="litrosValorContainer" style="display: none; margin-top: 10px;">
+                <input type="text" id="litrosValor" name="LITROS/VALOR" placeholder="LITROS E VALOR DO ABASTECIMENTO">
+                </div>
+                
+                
+    <script type="text/javascript">
+
+
+
+    function toggleField() {
+        var select = document.getElementsByName('Abastecimento')[0];
+        var requisicaoInput = document.getElementsByName('requisição')[0];
+        var litrosValorContainer = document.getElementById('litrosValorContainer');
+        var litrosValorInput = document.getElementById('litrosValor');
+
+        if (select.value === 'SIM') {
+            requisicaoInput.disabled = false;
+            litrosValorContainer.style.display = 'block';
+            litrosValorInput.required = true;
+        } else {
+            requisicaoInput.disabled = true;
+            requisicaoInput.value = '';
+            litrosValorContainer.style.display = 'none';
+            litrosValorInput.required = false;
+            litrosValorInput.value = '';
+        }
+    }
+    window.onload = function () {
+        toggleField(); // Executa ao carregar a página
+        document.getElementsByName('Abastecimento')[0].onchange = toggleField; // Executa ao mudar a opção
+    };
+
+</script>
+
+    </script>
+
             <button type="submit" id="send">Enviar</button>
 
-        <form></form>
 
         <p id="rodape">©2025 Ronaldo Lima | All rights reserved</p>
 
     </div>
-    <script src="index.js"></script>
+    
     
 </body>
 </html>
