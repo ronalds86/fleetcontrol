@@ -134,11 +134,14 @@
 
             
             
-                <input type="text" placeholder="Nº da requisição" name="requisição"><br>
-
+                
                 <!-- Campo para litros e valor do abastecimento -->
+                 
                 <div id="litrosValorContainer" style="display: none; margin-top: 10px;">
-                <input type="text" id="litrosValor" name="LITROS/VALOR" placeholder="LITROS E VALOR DO ABASTECIMENTO">
+                <input type="text" id="requisição" name="requisição" placeholder="Nº da requisição"><br>
+                <input type="text" id="litros" name="LITROS" placeholder="LITROS DE COMBUSTÍVEL"><br>
+                <input type="text" id="Valor" name="VALOR" placeholder="VALOR DO ABASTECIMENTO">
+
                 </div>
                 
                 
@@ -150,18 +153,25 @@
         var select = document.getElementsByName('Abastecimento')[0];
         var requisicaoInput = document.getElementsByName('requisição')[0];
         var litrosValorContainer = document.getElementById('litrosValorContainer');
-        var litrosValorInput = document.getElementById('litrosValor');
+        var litrosValorInput = document.getElementById('litros');
+        var ValorInput = document.getElementById('Valor')
+        var requisiçãoInput = document.getElementById('requisição')
 
         if (select.value === 'SIM') {
             requisicaoInput.disabled = false;
             litrosValorContainer.style.display = 'block';
             litrosValorInput.required = true;
+            ValorInput.required = true
+            requisiçãoInput.required = true
         } else {
-            requisicaoInput.disabled = true;
+            requisicaoInput.disabled = true; 
             requisicaoInput.value = '';
             litrosValorContainer.style.display = 'none';
             litrosValorInput.required = false;
+            ValorInput.required = false;
             litrosValorInput.value = '';
+            ValorInput.value = '';
+            requisiçãoInput = '';
         }
     }
     window.onload = function () {
