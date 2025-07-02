@@ -68,11 +68,10 @@
                 <option value="Sta. BRANCA">Sta. BRANCA</option>
                 <option value="TREMEMBÉ">TREMEMBÉ</option>
                 <option value="JACAREÍ">JACAREÍ</option>
-                <option value="PIT">PIT</option>
                 <option value="REVISÃO">REVISÃO</option>>
                 <option value="OFICINA MECÂNICA">OFICINA MECÂNICA</option> 
-                <option value="UBATUBA">UBATUBA</option>    
-                <option value="VARGINHA">VARGINHA</option>
+                <option value="UBATUBA">UBATUBA</option>
+                <option value="VARGINHA">VARGINHA</option>        
                 <option value="USO ADMINISTRATIVO">USO ADMINISTRATIVO</option>  
                 <option value="NÃO LISTADO">NÃO LISTADO</option>
 
@@ -85,14 +84,19 @@
                 <input type="text" id="outroProjeto" name="outroProjeto" placeholder="Informe o nome do projeto">
             </div>
 
-              <!-- Campo de defeito para oficina mecânica -->
+            <!-- Campo de defeito para oficina mecânica -->
             <div id="defeitoContainer" style="display: none; margin-top: 10px;">
             <input type="text" id="defeito" name="defeito" placeholder="Informe o problema">
             </div>
 
+            <!--Campo Uso Administrativo-->
+            <div id="admContainer" style="display: none; margin-top: 10px;">
+            <input type="text" id="usoAdm" name="USO-ADM" placeholder="INFORME O DESTINO">
+            </div>
+
             
             <!--JS-->
-           <script>
+            <script>
                 document.addEventListener("DOMContentLoaded", function () {
                 var projetoSelect = document.getElementsByName("projeto")[0];
                 var outroProjetoContainer = document.getElementById("outroProjetoContainer");
@@ -146,8 +150,7 @@
             </select><br>
 
             
-            
-                
+
                 <!-- Campo para litros e valor do abastecimento -->
 
                 <div id="litrosValorContainer" style="display: none; margin-top: 10px;">
