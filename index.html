@@ -92,13 +92,15 @@
 
             
             <!--JS-->
-            <script>
+           <script>
                 document.addEventListener("DOMContentLoaded", function () {
                 var projetoSelect = document.getElementsByName("projeto")[0];
                 var outroProjetoContainer = document.getElementById("outroProjetoContainer");
                 var outroProjetoInput = document.getElementById("outroProjeto");
                 var defeitoContainer = document.getElementById("defeitoContainer");
                 var defeitoInput = document.getElementById("defeito");
+                var admContainer = document.getElementById("admContainer");
+                var admInput = document.getElementById("usoAdm");
 
                 projetoSelect.addEventListener("change", function () {
                     // MOSTRA campo "outroProjeto"
@@ -119,6 +121,16 @@
                     defeitoContainer.style.display = "none";
                     defeitoInput.required = false;
                     defeitoInput.value = "";
+                    }
+
+                    // MOSTRA campo "USO-ADM" se escolher USO ADMINISTRATIVO
+                    if (projetoSelect.value === "USO ADMINISTRATIVO") {
+                    admContainer.style.display = "block";
+                    admInput.required = true;
+                    } else {
+                    admContainer.style.display = "none";
+                    admInput.required = false;
+                    admInput.value = "";
                     }
                 });
             });
