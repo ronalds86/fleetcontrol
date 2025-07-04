@@ -48,12 +48,15 @@
             <select name="projeto" required="required">
                 <option value="">PROJETO</option>
                 <option value="AEROPORTO">AEROPORTO</option>
+                <option value="AEROPORTO CURITIBA">AEROPORTO CURITIBA</option>
                 <option value="ALARME">ALARME</option>
                 <option value="APARECIDA">APARECIDA</option>
+                <option value="BRASÍLIA">BRASÍLIA</option>
                 <option value="CAÇAPAVA">CAÇAPAVA</option>
                 <option value="CCR">CCR</option>
-                <option value="CCR SERTÃOZINHO">CCR SERTÃOZINHO</option>
-                <option value="CCR SOROCABANA">CCR SOROCABANA</option>   
+                <option value="CCR SERTANEJA">CCR SERTANEJA</option>
+                <option value="CCR SOROCABANA">CCR SOROCABANA</option>  
+                <option value="CCR LONDRINA">CCR LONDRINA</option> 
                 <option value="CAMANDUCAIA">CAMANDUCAIA</option>
                 <option value="CAMANDUCAIA - ESCOLAS">CAMANDUCAIA - ESCOLAS</option>
                 <option value="CÂMARA MUNICIPAL SJC">CÂMARA MUNICIPAL SJC</option>
@@ -66,6 +69,9 @@
                 <option value="LAVA-RÁPIDO">LAVA-RÁPIDO</option>
                 <option value="PINDAMONHAGABA">PINDAMONHAGABA</option>
                 <option value="Sta. BRANCA">Sta. BRANCA</option>
+                <option value="SABESP">SABESP</option>
+                <option value="RIO DE JANEIRO">RIO DE JANEIRO/option>
+                <option value="TAUBATÉ">TAUBATÉ</option>
                 <option value="TREMEMBÉ">TREMEMBÉ</option>
                 <option value="JACAREÍ">JACAREÍ</option>
                 <option value="REVISÃO">REVISÃO</option>>
@@ -81,12 +87,12 @@
 
             <!--PROJ NÃO LISTADO 18/03/25-->
             <div id="outroProjetoContainer" style="display: none; margin-top: 10px;">
-                <input type="text" id="outroProjeto" name="outroProjeto" placeholder="Informe o nome do projeto">
+                <input type="text" id="outroProjeto" name="outroProjeto" placeholder="INFORME O NOME DO PROJETO">
             </div>
 
             <!-- Campo de defeito para oficina mecânica -->
             <div id="defeitoContainer" style="display: none; margin-top: 10px;">
-            <input type="text" id="defeito" name="defeito" placeholder="Informe o problema">
+            <input type="text" id="defeito" name="defeito" placeholder="INFORME O PROBLEMA">
             </div>
 
             <!--Campo Uso Administrativo-->
@@ -144,7 +150,7 @@
 
             <!--ABASTECIMENTO-->
             <select name="Abastecimento" required="required">
-                <option value="">PRECISA ABASTECER?</option>
+                <option value="">IRÁ ABASTECER?</option>
                 <option value="SIM">SIM</option>
                 <option value="NÃO">NÃO</option>
             </select><br>
@@ -154,7 +160,7 @@
                 <!-- Campo para litros e valor do abastecimento -->
 
                 <div id="litrosValorContainer" style="display: none; margin-top: 10px;">
-                <input type="text" id="requisição" name="requisição" placeholder="Nº da requisição"><br>
+                <input type="text" id="requisição" name="requisição" placeholder="Nº DA REQUISIÇÃO"><br>
                 <input type="text" id="litros" name="LITROS" placeholder="LITROS DE COMBUSTÍVEL"><br>
                 <input type="text" id="Valor" name="VALOR" placeholder="VALOR DO ABASTECIMENTO">
 
