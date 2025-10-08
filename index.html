@@ -77,14 +77,21 @@
                 <option value="REVISÃO">REVISÃO</option>>
                 <option value="OFICINA MECÂNICA">OFICINA MECÂNICA</option> 
                 <option value="UBATUBA">UBATUBA</option>
-                <option value="VARGINHA">VARGINHA</option>        
+                <option value="VARGINHA">VARGINHA</option> 
+                <option value="PIT">PIT</option>       
                 <option value="USO ADMINISTRATIVO">USO ADMINISTRATIVO</option>  
                 <option value="NÃO LISTADO">NÃO LISTADO</option>
 
             </select><br>
 
-          
-
+             <!--CHECKLIST-->
+            <select name="CHECKLIST" required="required">
+                <option value="">O VEÍCULO POSSUI ALGUMA AVARIA?</option>
+                <option value="SIM">SIM</option>
+                <option value="NÃO">NÃO</option>
+            </select><br>
+            
+            
             <!--PROJ NÃO LISTADO 18/03/25-->
             <div id="outroProjetoContainer" style="display: none; margin-top: 10px;">
                 <input type="text" id="outroProjeto" name="outroProjeto" placeholder="INFORME O NOME DO PROJETO">
@@ -100,8 +107,35 @@
             <input type="text" id="usoAdm" name="USO-ADM" placeholder="INFORME O DESTINO">
             </div>
 
+            <!--CHECKLIST-->
+            <div id="checklistContainer" style="display: none; margin-top: 10px;">
+            <input type="text" id="check" name="CHECKLIST" placeholder="RELATE A AVARIA">
+            </div>
             
             <!--JS-->
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                var checkSelect = document.getElementsByName("CHECKLIST")[0];
+                var checklistContainer = document.getElementById("checklistContainer")
+                var checklistInput = document.getElementById("check")
+
+                checkSelect.addEventListener("change", function () {
+                    //Mostra o campo de checklist
+                    if (checkSelect.value === "SIM") {
+                        checklistContainer.style.display = "block";
+                        checklistInput.required = true;
+                    } else {
+                        checklistContainer.style.display = "none";
+                        checklistInput.required = false;
+                        checklistInput.value = "";
+                    }
+                })
+                });
+
+            </script>
+
+
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
                 var projetoSelect = document.getElementsByName("projeto")[0];
@@ -145,8 +179,6 @@
                 });
             });
             </script>
-
-             
 
             <!--ABASTECIMENTO-->
             <select name="Abastecimento" required="required">
