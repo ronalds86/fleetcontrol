@@ -103,3 +103,9 @@ button:hover{
     font-size: smaller;
     color: antiquewhite;
  }
+
+ #disclaimer {
+    color: antiquewhite;
+    font-size: 14px;
+
+}
